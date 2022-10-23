@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Turisk</title>
+        <title>Clean Blog - Start Bootstrap Theme</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -19,7 +19,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="index.html">Home</a>
+                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
@@ -40,8 +40,8 @@
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
                         <div class="site-heading">
-                            <h1>Turisk</h1>
-                            <span class="subheading">A Website in memory of the Jewish community of Turisk</span>
+                            <h1>Clean Blog</h1>
+                            <span class="subheading">A Blog Theme by Start Bootstrap</span>
                         </div>
                     </div>
                 </div>
@@ -53,28 +53,59 @@
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <!-- Post preview-->
                     <div class="post-preview">
-                            <h2 class="post-title">History</h2>
-                            <p>
-For almost ten centuries hundreds of thousands of Jews lived in hundreds of cities and shtettlach of east Europe: Poland, Russia, Ukraina, Belaruss, etc.
-From the beginning they build and developed the countries they lived in. Trade, commerce, and industry brought progress and wealth to the people Of the countries they lived. In spite of it, civil rigths were denied to them! It took a very long period of time till they became equal citizens.
-But the Jewish communities developed, cultural life Flourished. Political parties arose, The Bund, Zionist Parties, youth movements: Hashomer Hazair, the Halutz movement etc. The ideas how to solve the so called. "Jewish problem" were the main issue!
-In the 20ties of the 20th century the antisemiting wave among the people of those countries became threating.
-The movements initiated and operated immigration to Eretz Israel and started to organize secret para military units in the Jewish communities to defend against pogromist groups.
-The Jewish communities in the cities and shtettlach were the soil for the roots of the resisstance and upraising against the German murderers. They knew it is a non equal struggle. In a very short period of time, most of the Jewish population were exterminated. The houses and property occupied by the non Jewish locals.
-			    </p>
+                        <a href="post.html">
+                            <h2 class="post-title">Man must explore, and this is exploration at its greatest</h2>
+                            <h3 class="post-subtitle">Problems look mighty small from 150 miles up</h3>
+                        </a>
+                        <p class="post-meta">
+                            Posted by
+                            <a href="#!">Start Bootstrap</a>
+                            on September 24, 2022
+                        </p>
                     </div>
                     <!-- Divider-->
                     <hr class="my-4" />
                     <!-- Post preview-->
                     <div class="post-preview">
-                      <h2 class="post-title">The Exebition at the Moreshet Center</h2>
-			<p>
-			  The Mordechai Anilevich exhibit and the Samuel and Rachel Boymel Holocaust Research Center in Memory of Turisk Shtetl was opened on April 21, 2009, at the Moreshet Auditorium, Givat Haviva, Israel. Opening hours: Sunday to Thrusday, 8:30-15:30. It is recommended to coordinate a visit with
-			</p>
+                        <a href="post.html"><h2 class="post-title">I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.</h2></a>
+                        <p class="post-meta">
+                            Posted by
+                            <a href="#!">Start Bootstrap</a>
+                            on September 18, 2022
+                        </p>
+                    </div>
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                    <!-- Post preview-->
+                    <div class="post-preview">
+                        <a href="post.html">
+                            <h2 class="post-title">Science has not yet mastered prophecy</h2>
+                            <h3 class="post-subtitle">We predict too much for the next year and yet far too little for the next ten.</h3>
+                        </a>
+                        <p class="post-meta">
+                            Posted by
+                            <a href="#!">Start Bootstrap</a>
+                            on August 24, 2022
+                        </p>
+                    </div>
+                    <!-- Divider-->
+                    <hr class="my-4" />
+                    <!-- Post preview-->
+                    <div class="post-preview">
+                        <a href="post.html">
+                            <h2 class="post-title">Failure is not an option</h2>
+                            <h3 class="post-subtitle">Many say exploration is part of our destiny, but it’s actually our duty to future generations.</h3>
+                        </a>
+                        <p class="post-meta">
+                            Posted by
+                            <a href="#!">Start Bootstrap</a>
+                            on July 8, 2022
+                        </p>
                     </div>
                     <!-- Divider-->
                     <hr class="my-4" />
                     <!-- Pager-->
+                    <div class="d-flex justify-content-end mb-4"><a class="btn btn-primary text-uppercase" href="#!">Older Posts →</a></div>
                 </div>
             </div>
         </div>
@@ -109,6 +140,7 @@ The Jewish communities in the cities and shtettlach were the soil for the roots 
                                 </a>
                             </li>
                         </ul>
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; Your Website 2022</div>
                     </div>
                 </div>
             </div>
