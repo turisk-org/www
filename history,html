@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Turisk</title>
+        <title>Turisk - History</title>
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -19,64 +19,60 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
             <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="index.html">Home</a>
+                <a class="navbar-brand" href="index.html">Start Bootstrap</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="history.html">History</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Testimonies</a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html"></a></li>
-                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.html">Sample Post</a></li>
+                        <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
         <!-- Page Header-->
-        <header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
+        <header class="masthead" style="background-image: url('assets/img/post-bg.jpg')">
             <div class="container position-relative px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-md-10 col-lg-8 col-xl-7">
-                        <div class="site-heading">
-                            <h1>Turisk</h1>
-                            <span class="subheading">A Website in memory of the Jewish community of Turisk</span>
+                        <div class="post-heading">
+                            <h1>History</h1>
+                            <h2 class="subheading"></h2>
                         </div>
                     </div>
                 </div>
             </div>
         </header>
-        <!-- Main Content-->
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="col-md-10 col-lg-8 col-xl-7">
-                    <!-- Post preview-->
-                    <div class="post-preview">
-                            <p>
-For almost ten centuries hundreds of thousands of Jews lived in hundreds of cities and shtettlach of east Europe: Poland, Russia, Ukraina, Belaruss, etc.
-From the beginning they build and developed the countries they lived in. Trade, commerce, and industry brought progress and wealth to the people Of the countries they lived. In spite of it, civil rigths were denied to them! It took a very long period of time till they became equal citizens.
-But the Jewish communities developed, cultural life Flourished. Political parties arose, The Bund, Zionist Parties, youth movements: Hashomer Hazair, the Halutz movement etc. The ideas how to solve the so called. "Jewish problem" were the main issue!
-In the 20ties of the 20th century the antisemiting wave among the people of those countries became threating.
-The movements initiated and operated immigration to Eretz Israel and started to organize secret para military units in the Jewish communities to defend against pogromist groups.
-The Jewish communities in the cities and shtettlach were the soil for the roots of the resisstance and upraising against the German murderers. They knew it is a non equal struggle. In a very short period of time, most of the Jewish population were exterminated. The houses and property occupied by the non Jewish locals.
-			    </p>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                      <p>
+Turisk is located on the bank of Turia River in the Wollyn district which belonged to Poland before the Second World War and today is part of the Ukraine.
+The Russian Encyclopedia first mentioned the Turisk shtetl in the year 1097, when a group of Jewish families paid the the Prince of Kiev 22 pieces of gold for permission to build houses on the bank of the Turia river.
+The rulers were the Princes Vladimir and Vassilka.
+In the year 1205, Turisk was occupied by the Lithuanians.
+In the year 1515, King Sigismund donated Turisk to Prince Tangushka.
+In the year 1759, King Augustus the Third, granted the city rights to Turisk and the Jewish citizens.
+In the year 1765, 874 Jews lived in Turisk.
+In the year 1897, over 2,000 Jews were registered in Turisk.
+In 1938, the Jewish population of Turisk grew to over 5,500 people.
+On the other bank of the Turia was a suburb with a population of about 2000 Ukrainians.
+In the 16th century the Jews of Turisk donated another 22 pieces of gold to the Prince of Kiev for permission to build a Synagogue.
+In the same century a Catholic church was built in the center of the Shtetl.
+In 1870, a Pravoslavian church was built in the center of the Shtetl.
+On an island in center of the Turia river the ruins of an ancient fortress towered over the shtetl.
+			
+                        </p>
                     </div>
-                    <!-- Divider-->
-                    <hr class="my-4" />
-                    <!-- Post preview-->
-                    <div class="post-preview">
-                      <h2 class="post-title">The Exebition at the Moreshet Center</h2>
-			<p>
-			  The Mordechai Anilevich exhibit and the Samuel and Rachel Boymel Holocaust Research Center in Memory of Turisk Shtetl was opened on April 21, 2009, at the Moreshet Auditorium, Givat Haviva, Israel. Opening hours: Sunday to Thrusday, 8:30-15:30. It is recommended to coordinate a visit with
-			</p>
-                    </div>
-                    <!-- Divider-->
-                    <hr class="my-4" />
-                    <!-- Pager-->
                 </div>
             </div>
-        </div>
+        </article>
         <!-- Footer-->
         <footer class="border-top">
             <div class="container px-4 px-lg-5">
@@ -108,6 +104,7 @@ The Jewish communities in the cities and shtettlach were the soil for the roots 
                                 </a>
                             </li>
                         </ul>
+                        <div class="small text-center text-muted fst-italic">Copyright &copy; Your Website 2022</div>
                     </div>
                 </div>
             </div>
