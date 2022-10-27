@@ -1,170 +1,569 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Turisk - History</title>
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Font Awesome icons (free version)-->
-        
-         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Turisk - History</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script><!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel=
+  "stylesheet" type="text/css"><!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet">
+  <style>
+  .mapouter{position:relative;text-align:right;height:500px;width:600px;}
+  </style>
+  <style>
+  .gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}
+  </style>
+</head>
+<body>
+  <!-- Navigation-->
+  <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+    <div class="container px-4 px-lg-5">
+      <a class="navbar-brand" href="index.html">Home</a>
+      <div class="dropdown">
+        <button class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Contents</button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li>
+            <a class="dropdown-item" href="#maps">Maps of Wollyn District</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#town-community">Town community</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#community-life">Community Life</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#hassidic">Hassidic</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#yiddish">Yiddish</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#activists"><b>Community Activists</b></a>
+            <li>
+              <a class="dropdown-item" href="#yizhak_greenshtein">Yizhak Greenshtein</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#neta_wainer">Neta Wainer</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#avraham_shiye_bar">avraham_shiye Bar</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#yeshayahu_wainer">Yeshayahu Wainer</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#yaacov_sheaps">Yaacov Sheaps</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#hershel_sthearb">Hershel Sthearb</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#eehezkel_zummerblit">Eehezkel Zummerblit</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="#yaacov_shcherb">Yaacov Shcherb</a>
+            </li>
+	  </li>
+
+
+          <li>
+            <a class="dropdown-item" href="#authors"><b>Authors</b></a>
+            </li>
+	  <li>
+              <a class="dropdown-item" href="#bio_baruch">Baruch</a>
+            </li>
+	  <li>
+              <a class="dropdown-item" href="#bio_matys">Matys</a>
+            </li>
+	  <li>
+              <a class="dropdown-item" href="#bio_leib">Leib</a>
+            </li>
+	  <li>
+              <a class="dropdown-item" href="#bio_brenner">Brenner</a>
+            </li>
+	  <li>
+              <a class="dropdown-item" href="#bio_markuzi">Markuzi</a>
+            </li>
+	  <li>
+              <a class="dropdown-item" href="#bio_tabacay">Tabacay</a>
+            </li>
+	  <li>
+              <a class="dropdown-item" href="#bio_tversky">Tversky</a>
+            </li>
+	  <li>
+              <a class="dropdown-item" href="#bio_weinper">Weinper</a>
+            </li>
+	  <li>
+              <a class="dropdown-item" href="#bio_wall">Wall</a>
+            </li>
+	  <li>
+              <a class="dropdown-item" href="#bio_oivental">Oivental</a>
+            </li>
+        </ul>
+      </div><button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls=
+      "navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto py-4 py-lg-0">
+          <li class="nav-item">
+            <a class="nav-link px-lg-3 py-3 py-lg-4" href="history.html">History</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Testimonies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Photos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav><!-- Page Header-->
+  <header class="masthead" style="background-image: url('assets/img/post-bg.jpg')">
+    <div class="container position-relative px-4 px-lg-5">
+      <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+          <div class="post-heading">
+            <h1>History</h1>
+            <h2 class="subheading"></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header><!-- Post Content-->
+  <article class="mb-4">
+    <div class="container px-4 px-lg-5">
+      <div class="row gx-4 gx-lg-5 justify-content-center">
+        <div class="col-md-10 col-lg-8 col-xl-7">
+          <div class="post-preview">
+            <p>Turisk is located on the bank of Turia River in the Wollyn district which belonged to Poland before the Second World War and today is
+            part of the Ukraine. The Russian Encyclopedia first mentioned the Turisk shtetl in the year 1097, when a group of Jewish families paid
+            the the Prince of Kiev 22 pieces of gold for permission to build houses on the bank of the Turia river. The rulers were the Princes
+            Vladimir and Vassilka. In the year 1205, Turisk was occupied by the Lithuanians. In the year 1515, King Sigismund donated Turisk to
+            Prince Tangushka. In the year 1759, King Augustus the Third, granted the city rights to Turisk and the Jewish citizens. In the year 1765,
+            874 Jews lived in Turisk. In the year 1897, over 2,000 Jews were registered in Turisk. In 1938, the Jewish population of Turisk grew to
+            over 5,500 people. On the other bank of the Turia was a suburb with a population of about 2000 Ukrainians. In the 16th century the Jews
+            of Turisk donated another 22 pieces of gold to the Prince of Kiev for permission to build a Synagogue. In the same century a Catholic
+            church was built in the center of the Shtetl. In 1870, a Pravoslavian church was built in the center of the Shtetl. On an island in
+            center of the Turia river the ruins of an ancient fortress towered over the shtetl.</p>
+          </div><!-- Divider-->
+          <section id="maps">
+            <h3 class="post-title">Maps of Wollyn District</h3>
+            <figure class="figure">
+              <img src="assets/img/map_1920.jpg" class="figure-img .img-fluid. max-width: 100% rounded" alt=
+              "A generic square placeholder image with rounded corners in a figure.">
+              <figcaption class="figure-caption text-center">
+                Poland in 1920
+              </figcaption>
+            </figure>
+            <figure class="figure">
+              <img src="assets/img/map_1944.jpg" class="figure-img img-fluid rounded" alt=
+              "A generic square placeholder image with rounded corners in a figure.">
+              <figcaption class="figure-caption text-center">
+                Wollyn district in 1944
+              </figcaption>
+            </figure>
+            <div class="mapouter">
+              <div class="gmap_canvas">
+                <iframe width="600" height="500" id="gmap_canvas" src=
+                "https://maps.google.com/maps?q=Turisk%20&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed" frameborder="0" scrolling="no"
+                marginheight="0" marginwidth="0" name="gmap_canvas"></iframe><a href="https://www.whatismyip-address.com"></a><br>
+                <a href="https://www.embedgooglemap.net">google maps embed wordpress</a>
+              </div>
+              <figcaption class="figure-caption text-center">
+                Turisk Map Today
+              </figcaption>
+            </div>
+          </section>
+          <section id="town-community">
+	    <div class = "pt-5">
+            <h3 class="post-title">Town community</h3>
+            <p>Turisk was founded by Jews in 1094, on the shores of the river Turia. The Jewish residents dealt with rooting out the forests, and
+            wood industry. The community grew. A jewish cemetery of the 12th century was discovered near Turisk. The Shtetl was occupied six times by
+            neighbour countries. Parts of it was destroyed, the Jews always recovered and started new. In the 16th century the community flourished.
+            They build a very big synagogue. Then new oppressions were imposed. The Jewish population was forbidden to live or act in the cities of
+            the country. The oppressions caused an economical crisis to to region. Turisk suffered, and was fighting to survive. The suffering caused
+            dreams and expectations the Messeyash to arrive… In the beginning of the 18th century, the Hassidic movement flourished. The rebe Avraham
+            Tversky, the son of the Maggyd from Chernobyl decided to settle in Turisk. He started the the Trisker Hassidic dynsty. A very big court
+            was build, and it brought a dramatic change to the economic situation. Hassidim from all over Poland, Ukraina visited the Maggyd, to get
+            His blessings. Rebe Avremele Maggyd was a very well known commentator of the Torah, in the 80tees He published His study "Magen Avraham",
+            which is a study book in the yeshivot until today. In the beginning of the 19th century the spirits of the Haskala penetrated into the
+            circles of the yeshiva students, when Coming home they erected Zionist groups, and modernization of the Cheiders. A library was foundet,
+            they collected books from the members homes, most of them in Yiddish. A Jewish school was foundet wih Hebrew and yiddish as teaching
+            languages. It aroused a very strong reaction of the Orthodox Hassidim,but the progress continued. In the first world war the German army
+            occupaied Turisk. The Shtetl was closed and isolated, the economy collapced, starvation and hunger. The Rebe with all the court left for
+            Russia. When the war was over a group of Zionist school teachers decided to join the "Tarbut" school net,and stopped to teach Yiddish. As
+            a result a group of Yiddish teachers lead by the writer Leib Olizky foundet a school with Yiddish as the teaching language. It devided
+            the Shtetl into two camps of Zionits and Bundists. The first "Hashomer" was foundet and the first group of youngsters immigrated to
+            Palestine. When they left the "Ahaluz—Pioneer" organization arouse and young Zionists man and women went to "Hachshara" places to prepare
+            for Palestine. That was "KLOSOVA" a stone quarry, hard and dangerous work. An Hachshara place started in a sawmill not far from Turisk.
+            Tens of yong Hallouzim from other Shtetlach were preparing for Palestine. It influenced the youth. In 1927 the Hashomer Hazair youth
+            movement erected a "NEST" jn Turisk . The founders were students of the "Tarbut" high school in Kovel, and included the pupils of the
+            Tarbut school. The grown up members left for the Hachshara center, Bialystock, and then started to leave for Palestine. The slogan of the
+            movement was self fulfillment, to be a peasent in Palestine. One of the founders was Yeshaayahu (shayke) Wainer, he went for Hachshara
+            then was enlisted to be one of the leaders of the unlegal immigration to Palestine. He became one of the leading groupe of Hashomer
+            Hazahir in Poland. In 1939 was elected to be the delegate of the movement to the Zionist Congress in Basel. The Yiddish school was the
+            first of its kind in all the region of 44 towns and Shtetlach. It became famous because of the level of its education. In time many of
+            their graduates became writers and poets in Yiddish literature. The competition betweenthe parties was a trigger to culturally enrich the
+            Shtetl. Turisk became famous because of several important personalities and events:</p>
+            <ul>
+              <li>In the beginning of the 18th century Dr. Moshe Marcoosi came voluntarily to practisize in Turisk over 30 years, helping the poor
+              people, and was researching the illnesses and plagues spread among them.In 1770 he published a medicine book in Yiddish ! As a hand
+              book for the masses. It is the only medicine published in Yiddish until today.</li>
+              <li>In the beginning of the 18th century Rebe Avremely Tversky erected the Hassidic court and Dynasty, was famous all over Ukraina and
+              Poland, and many countries abroad. He wrote and published a commentary study book to the Torah, which is an important study book in the
+              Yeshivot until todaym.</li>
+              <li>The cultural soil of Turisk was the growing area of ten very important writers and poets, Researchers and publicists. Two of the
+              sons of Turisk became leading persons in their movements in Poland:
+                <ul>
+                  <li>Yeshayahu (Shayke) Wainer, he was among the leading persons of the unlegal immigration to Palestine before the war.He was
+                  elected as delegate of his movement to the Zionist congress in Basel in 1939. During the S.W.W. he was in charge of the ties with
+                  the Hashomer refugies in Russia, before the war finished went to Poland to meet and help them to move on to Palestine. After the
+                  war he served as head of the Hashomer Hazair movement for three years. He was appointed to lead the struggle to free the Russian
+                  Jewry in south Amerika and U.S.A.</li>
+                  <li>Liber Brener, a teacher and leader of the Socialist Bund party in the region. Was forced to leave Turisk by the Polish
+                  authorieties. He settled in the town Chenstochova. There he Was active in the Bund. During the war was among the leaders of thr
+                  ghetto resistance. He Survived and published a study of the resistance and mytiny of the Ghetto.</li>
+                </ul>
+              </li>
+            </ul>The S.W.W. started when Germany attacked and occupaied Poland. Then divided it with Russia. Turisk fall into Russian rule. All the
+            activities of the Zionists was forbidden. The Hebrew school and library closed. The movement members were ordered to stop activities.
+            Some of them had to join the Russian army. But the "quiet life" did not last long… In june 1941 the Nazis invaded Russia. They occupied
+            Turisk on the second day. In the same day the Germans with the active support of the Ukrainians opened the horrible oppressions against
+            the Jews. They were forced to concentrate into half of the houses of Turisk, in terrible sanitary conditions. Many were taken to hard
+            works out of the Shtetl, not all of them came back. In the Ghetto starvation and deads were every day, those who tried to escape were
+            shot down… All the winter clothes were confiscated, all gold and silver robbed, all cows ,goats taken away… Then the terrible Saturday
+            came, all the population was ordered to concentrate in and around the big synagogue, than surrounded by the Ukrainian militia were forced
+            with bayonets to move on the main street towards Kovel. When coming to the pits of the brick factory they were forced to undress and line
+            after line were shot and fell into the pit. The slaughter went on until evening and all were dead! In the evening Ukrainian hordes break
+            into the Ghetto houses to sqander… sudden gun Fire was opened from houses, many fall dead much more were wounded, they run away in
+            panick… when the militia started to attack the houses a fire caught the wooden Ghetto houses ,in a few minutes all the Ghetto was aflame.
+            Some young Jews who tried to escape were shot and thrown into the flames. In the morning only a few wooden beams still were smoky. This
+            was the end of the 850 years old Jewish Turisk.
+	    </div>
+          </section>
+          <section id="community-life">
+	    <div class = "pt-5">
+            <h3 class="post-title">The Jewish Community Life in Turisk</h3>
+            <p>Since its foundation in 1097, until the Holocoaust in 1942 ,the Jews of Turisk built and developed the shtetl . The woods around it
+            were cut down, and saw -mills processed materials, to be shipped by the stream and rivers .Trade and commerce bloomed. Skilled Jewish
+            workers built workshops of all kinds. The Jewish population grew. In the 16th century, a very large synagogue and a" Yeshive"were built.
+            The cultural and religious life flourished. Several times Turisk was occupaied and parts were destroyed,and rebuild. The Jews
+            suffered,but always started again.</p>
+            <p>In the beginning of the 18th century, Turisk became a very important Hassidic center,as Rabbi Avraham of the Hassidic branch of
+            Chernobyll settled in Turisk . Since then until the beginning of the 20th century the Hassidic rabbis of Turisk became famous all over
+            Poland,with hundred of thousands of worshippers in many cities and even in America. Every year in the memorial week of the Magid
+            thousands of Hassidim crowded the Shtetl, praying for help, believing in the Magids power to make miracles.</p>
+            <p>The "Hasscala" wave of the 19th century flooded the Shtetl before the end of the century.ry floaded the he 19th e miracles.din manyk
+            .treams and rivers Beside the Yes- hiva and "Heider" a Hebrew school was built with a Hebrew library. A group of young men founded the
+            Zionist and Youth Organization, dreaming to leave to Palestine. Some young men began studies and in a very short time started writing in
+            time very famous..</p>
+            <p>During the First World War, Turisk was occupaied by Germany, and suffered from very harsh economic difficulties. The Rabbis residence
+            was burned burned down. He was last Rabbi who left the Shtetl. the war was over ,Turisk became a part of Poland. The community recovered
+            slowly, but the cultural social and political life flourished. The Bund Socialist party erected a new school teaching all the classes in
+            the Yiddish language. This was the first Yiddish scool in our Region of 44 Jewish cities and Shtetls. I want to point out :In Turisk,
+            nine writers and poets+ poets were born and created in Yiddish and Hebrew most of them became famous all over the world.</p>
+            <p>A new Zionist Youth Organization Hashomer Hazair trained itself to defense against Ukrainian pogroms and to be ready to emigrate to
+            Palestine. Hundreds of them took part in the trainings,as tens of them left for Palestine.Turisk did not succeed in surviving
+            economically The majority of were poor people and looking for ways to emmigrate, but the community continued the cultural, educational
+            and Jewish activities. This was the situation when the Second World War started. The Russian-German pact gave east Poland to Russia. For
+            a very short period we managed to be Russian citizens, but we, the Zionist youth were arrested, and a small group managed to run away to
+            free Lithuania. Germany attacked Russia on the 22nd of June 1941. Only a very small group of Jews managed escape to Russia. Most of them
+            survived the war. In two days the German army occupaiyed Turisk. The same day they started the killings in the streets. All the Jews were
+            forced to concentrate in a small part of the Shtetl. Ten persons in a room, with no place sleep, in the worst sanitary conditions imagi-
+            nable. Every day new ordersarrived men were forced to work in very hard conditions outside the Ghetto, in the end of the day less and
+            less of them returned to the Ghetto. Every day new orders: to collect thousands of warm winter clothing for the German army. To collect
+            tens of kilograms of gold for the Germans, if not, they will execute tens of citizen. More than a year of torture and killings the
+            terrible day arrived. All the Ghetto people were forced to march towards the giant pits , of an old bricks factory. Standing naked on the
+            edge of the pit were shotdown into the pits, by the Germans and the Ukrainian militia. The mass murder lasted till dawn. Masses of
+            Ukrainians came to the Ghetto to rob the abandonet property. Some youngsters in hiding opened fire. They runned away calling the militia
+            for assistance . When they arrived, the youngsters set the wooden houses of the Ghetto on fire. The entire Shtetl was burned down, only
+            the roads remained. This was the end of the 900 year old Jewish Turisk! Only a 13 year old boy,Shmulick Boymel, survived. When Shmulik
+            came to the edge of the pit he stood naked with mother and sisters. The shooting and killings went on and on, they were waiting to be
+            shot.A second before being shot his mother gave him a push shouting, 'run shmulikl run! He fell into the pit ,his family was shot and
+            fell after him. When he awoke he climbed out ,found some clothing, and ran into the nearby forrest. His survival is quite an unbelievable
+            "story". When the war was over he met a young girl, who also survived . They married and emigrated to the U.S. Together they started a
+            busines while raising a fine Jewish family. Working haed for years , he became a very wealthy man and newer forgot where he came from. In
+            time they became one of the biggiest donors for the people of Israel, and Jewish communal needs in the U.S.A. We the Turiscians in Israel
+            were not aware of it. In 1992, when Gorbachove was in power, the Turiscians in Israel collected money to erect a tombstone at the mass
+            murder grave. While coming to erect it we saw the bad situation of the grave. Rumors among the Ukrainians told of a boy who ran away from
+            the horrible pit and survived, lives in the U.S.A back in Israel we decided to look for help to collect funds in order to enable the
+            renovation of the mass murder grave.</p>
+            <p>Mr.Sam Boymel donated the money for the project. With the help of local engineers the renovation succeeded. A group of twelwe
+            Turiscians ,two generations,who live in Israel and the Boymel family with son and brother from Cinncinati U.S.A. went to the grave for
+            the uncovery Ceremony.</p>
+            <p>During the voyage we discussed the idea to establish a place in Israel to memoriase of our Shtetl-Turisk.A place where the coming
+            generations can come+ witness learn about their roots, about the Jewish Stetl ,its life, culture,and history.</p>
+            <p>In Israel, we were informed of a museum project by the "Moreshet "Institution to memorialise the heroic uprising in the Ghettos. The
+            Mordchai Anieliewich Museum will become a Holocaust Study and Research Center. The exhibitions will commemorate the actions of the Jewish
+            Youth Movements during the Holocaust, their roots in evident hundreds of the Jewish shtetla in Poland. Our shtetl, Turisk, because of its
+            unick history for more than 900rd years as an important" sample "of Jewish life culture, and creativity, was chosen to represent all the
+            Stetlach in Poland and Ukraina ,the cradle and soil were the youth movements grow to become the initiators and leaders of the resistance
+            and upraising in the Ghettos. Mr. Sam Boymell made a generous donation,together with other donors. The building is almost finished. With
+            more than half complete. Now we must fill the "shell". We the Turiscians in Israel are appeal to you-" to lend a hand" (a Yiddish saying)
+              to help finish the very special and important project ,for us and the generations to come.</p>
+	    	    </div>
+          </section>
+
+
+
+
+
+
+
+
+
+
+          <section id="hassidic">
+	    <div class = "pt-5">
+              <h3 class="post-title">The Hassidic Roots of the Turisk Dynasty in Chernobyl</h3>
+
+              <p>
+		<img src="assets/img/magid-of-turisk.jpg" class="float-end imgshadow" alt="">
+	      
+
+
+Rabbi Mordechai, known affectionately as, Rabbi Motele, the son of the founder of the Magyd dynasty, Rabbi R. Nachum from Chernobyl brought great development to the dynasty in its golden days. Tens of thousanda of Hassidim from Russia and the Ukraine came in droves to Chernobyl to hear him speak and receive his blessing. This was the beginning of the Tversky family dynasty. </p><p>
+
+Rabbi Motele had 8 sons. When he died they divided among themselves the areas of Kieve and Wollin. Each one established a Hassidic court. In Turisk, it was Rabbi Avrameleh who became the Magyd of Turisk. Among all the larger cities near Kovel, Ludmir, and Machieb, Turisk, on the shores of the Turia River was chosen as the center.  </p><p>
+ 
+Quickly the court was established and expanded accordingly over a large area extending from the Turia River to the city and even to the Provoslavic church. Residential buildings were built, a large synagogue, and stables. Rabbi Avraham, the Magyd of Turisk wrote and published his doctrine, "Protector of Abraham."
+Rabbi Abraham Tversky- the Magyd of Turisk, 1770-1837 </p><p>
 
  
-        
-        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-    </head>
-    <body>
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
-          <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="index.html">Home</a>
-	    <div class="dropdown">
-	      <button class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-		Contents
-	      </button>
-	      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-		<li><a class="dropdown-item" href="#maps">Maps of Wollyn District</a></li>
-		<li><a class="dropdown-item" href="#town-community">Town community</a></li>
-	      </ul>
+He was inherited by his youngest son who was a prodigy and learned in the Bible. It is said that in his youth he wanted to connect with prophet as he edited the Torah day and night for 1000 days and fasted for many months. </p><p>
+ 
+He was called the "Rabbi from Turisk". He married a woman from a well known rabbinical dynasty. Thousands of Hassidim from all over Wollin and the Ukraine came in droves to see him. On his grave a large monument was erected to receive the masses of Hassidim who visited the site. </p><p>
+ 
+The tradition among the Hassidim in Turisk is that on the day of his death thousands of Hassidim assembled from all over the country to commemorate his name and the entire town celebrated the event. A religious awakening and additional revenue for the people of Turisk ensued. All of the welfare services for miles around would come to lie on his grave and pray with the Rabbi from Turisk and put notes into a large box in the tent above his grave. </p><p>
+
+ 
+The Magyd's other brothers chose to live and work in other places and establish Turisk courts. Rabbi David Areleh chose to settle in the small town of Zurik. His court flourished due to the Trisker Rabbi from Zurik- the Trisker from Zurik. </p><p>
+ 
+ The Rabbi Mashali settled in Lublin and established a Hassidic court there. He also gained much respect. In this large market town which was also had "The committee of four countries" was filled with shtibilach of Hassidim many of which were Trisk Hassidim. The court gained much glory in that time.
+Rabbi Volvoli relocated to a large town near Kovel and established a court at the large synagogue and droves came to him from all over. </p><p>
+
+		<img src="assets/img/rabi-david-aharon.jpg" class="float-end imgshadow" alt="">
+
+   
+During the First World War the Magyd's court in Turisk was abandoned. It is likely that due to that the court burnt down and after the war was not rebuilt. However, the tradition of visiting the area where the court was on Memorial Day remains with thousands of people making the pilgrimage to his grave every year. </p><p>
+ 
+  Shtibilac, a small synagogue of Turisk Hassidim was established for   hundreds in eastern and western Poland as well as in New York where there are two courts (descendants of the Tversky family). Their activity continues to this day. In Jerusalem as well a shtible was founded. It is said that between the two World Wars 8 courts were active in Poland. Tens of thousands of Hassidic believers! Holocaust survivors also tell of how many remained true to the Rabbis of Turisk even to their deaths.                                                                                           
+
+	      
+            </p>
 	    </div>
-	    
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-              Menu
-              <i class="fas fa-bars"></i>
-            </button>
-            
-            
-            
-            
-            
-            
-                
-            
-            
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-              <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="history.html">History</a></li>
-                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Testimonies</a></li>
-                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Photos</a></li>
-                <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Contact</a></li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-        <!-- Page Header-->
-        <header class="masthead" style="background-image: url('assets/img/post-bg.jpg')">
-            <div class="container position-relative px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                        <div class="post-heading">
-                            <h1>History</h1>
-                            <h2 class="subheading"></h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- Post Content-->
-        <article class="mb-4">
-            <div class="container px-4 px-lg-5">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-md-10 col-lg-8 col-xl-7">
-                      <div class="post-preview">
-                      <p>
-Turisk is located on the bank of Turia River in the Wollyn district which belonged to Poland before the Second World War and today is part of the Ukraine.
-The Russian Encyclopedia first mentioned the Turisk shtetl in the year 1097, when a group of Jewish families paid the the Prince of Kiev 22 pieces of gold for permission to build houses on the bank of the Turia river.
-The rulers were the Princes Vladimir and Vassilka.
-In the year 1205, Turisk was occupied by the Lithuanians.
-In the year 1515, King Sigismund donated Turisk to Prince Tangushka.
-In the year 1759, King Augustus the Third, granted the city rights to Turisk and the Jewish citizens.
-In the year 1765, 874 Jews lived in Turisk.
-In the year 1897, over 2,000 Jews were registered in Turisk.
-In 1938, the Jewish population of Turisk grew to over 5,500 people.
-On the other bank of the Turia was a suburb with a population of about 2000 Ukrainians.
-In the 16th century the Jews of Turisk donated another 22 pieces of gold to the Prince of Kiev for permission to build a Synagogue.
-In the same century a Catholic church was built in the center of the Shtetl.
-In 1870, a Pravoslavian church was built in the center of the Shtetl.
-On an island in center of the Turia river the ruins of an ancient fortress towered over the shtetl.
-			
-                        </p>
-                    </div>
+          </section>
 
 
 
-		    
-                    <!-- Divider-->
-                    <hr class="my-4" />
-                     <section id="maps">
-                      <h2 class="post-title">Maps of Wollyn District</h2>
-		      
-		      <figure class="figure">
-  <img src="assets/img/map_1920.jpg" class="figure-img .img-fluid. max-width: 100% rounded" alt="A generic square placeholder image with rounded corners in a figure.">
-  <figcaption class="figure-caption text-left">Poland in 1920</figcaption>
-</figure>
-		      <figure class="figure">
-  <img src="assets/img/map_1944.jpg" class="figure-img img-fluid rounded" alt="A generic square placeholder image with rounded corners in a figure.">
-  <figcaption class="figure-caption text-left">Wollyn district in 1944</figcaption>
-</figure>
-
-		    <div class="mapouter"><div class="gmap_canvas"><iframe width="600" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=Turisk%20&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.whatismyip-address.com"></a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:600px;}</style><a href="https://www.embedgooglemap.net">google maps embed wordpress</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:600px;}</style></div>
-<figcaption class="figure-caption text-left">Turisk Map Today</figcaption>
-		    </div>
 
 
 
-                    <!-- Divider-->
-                    <hr class="my-4" />
-                     <section id="town-community">
-                      <h2 class="post-title">Town community</h2>
-
-		      <p>
-Turisk was founded by Jews in 1094, on the shores of the river Turia. The Jewish residents dealt with rooting out the forests, and wood industry. The community grew. A jewish cemetery of the 12th century was discovered near Turisk. The Shtetl was occupied six times by neighbour countries. Parts of it was destroyed, the Jews always recovered and started new. In the 16th century the community flourished. They build a very big synagogue. Then new oppressions were imposed. The Jewish population was forbidden to live or act in the cities of the country. The oppressions caused an economical crisis to to region. Turisk suffered, and was fighting to survive. The suffering caused dreams and expectations the Messeyash to arrive… In the beginning of the 18th century, the Hassidic movement flourished. The rebe Avraham Tversky, the son of the Maggyd from Chernobyl decided to settle in Turisk. He started the the Trisker Hassidic dynsty. A very big court was build, and it brought a dramatic change to the economic situation. Hassidim from all over Poland, Ukraina visited the Maggyd, to get His blessings. Rebe Avremele Maggyd was a very well known commentator of the Torah, in the 80tees He published His study "Magen Avraham", which is a study book in the yeshivot until today. In the beginning of the 19th century the spirits of the Haskala penetrated into the circles of the yeshiva students, when Coming home they erected Zionist groups, and modernization of the Cheiders. A library was foundet, they collected books from the members homes, most of them in Yiddish.
-A Jewish school was foundet wih Hebrew and yiddish as teaching languages. It aroused a very strong reaction of the Orthodox Hassidim,but the progress continued.
-In the first world war the German army occupaied Turisk. The Shtetl was closed and isolated, the economy collapced, starvation and hunger. The Rebe with all the court left for Russia. When the war was over a group of Zionist school teachers decided to join the "Tarbut" school net,and stopped to teach Yiddish. As a result a group of Yiddish teachers lead by the writer Leib Olizky foundet a school with Yiddish as the teaching language. It devided the Shtetl into two camps of Zionits and Bundists. The first "Hashomer" was foundet and the first group of youngsters immigrated to Palestine. When they left the "Ahaluz—Pioneer" organization arouse and young Zionists man and women went to "Hachshara" places to prepare for Palestine. That was "KLOSOVA" a stone quarry, hard and dangerous work. An Hachshara place started in a sawmill not far from Turisk. Tens of yong Hallouzim from other Shtetlach were preparing for Palestine. It influenced the youth. In 1927 the Hashomer Hazair youth movement erected a "NEST" jn Turisk . The founders were students of the "Tarbut" high school in Kovel, and included the pupils of the Tarbut school. The grown up members left for the Hachshara center, Bialystock, and then started to leave for Palestine. The slogan of the movement was self fulfillment, to be a peasent in Palestine. One of the founders was Yeshaayahu (shayke) Wainer, he went for Hachshara then was enlisted to be one of the leaders of the unlegal immigration to Palestine. He became one of the leading groupe of Hashomer Hazahir in Poland. In 1939 was elected to be the delegate of the movement to the Zionist Congress in Basel. The Yiddish school was the first of its kind in all the region of 44 towns and Shtetlach. It became famous because of the level of its education.
-In time many of their graduates became writers and poets in Yiddish literature. The competition betweenthe parties was a trigger to culturally enrich the Shtetl.
-Turisk became famous because of several important personalities and events:
-
-<ul>
- <li>In the beginning of the 18th century Dr. Moshe Marcoosi came voluntarily to practisize in Turisk over 30 years, helping the poor people, and was researching the illnesses and plagues spread among them.In 1770 he published a medicine book in Yiddish ! As a hand book for the masses. It is the only medicine published in Yiddish until today.</li>
-<li>In the beginning of the 18th century Rebe Avremely Tversky erected the Hassidic court and Dynasty, was famous all over Ukraina and Poland, and many countries abroad. He wrote and published a commentary study book to the Torah, which is an important study book in the Yeshivot until todaym.</li>
-<li>The cultural soil of Turisk was the growing area of ten very important writers and poets, Researchers and publicists.
-  Two of the sons of Turisk became leading persons in their movements in Poland:
-<ul>
-<li>
-Yeshayahu (Shayke) Wainer, he was among the leading persons of the unlegal immigration to Palestine before the war.He was elected as delegate of his movement to the Zionist congress in Basel in 1939. During the S.W.W. he was in charge of the ties with the Hashomer refugies in Russia, before the war finished went to Poland to meet and help them to move on to Palestine. After the war he served as head of the Hashomer Hazair movement for three years. He was appointed to lead the struggle to free the Russian Jewry in south Amerika and U.S.A.
-</li>
-<li>
-  Liber Brener, a teacher and leader of the Socialist Bund party in the region. Was forced to leave Turisk by the Polish authorieties. He settled in the town Chenstochova. There he Was active in the Bund. During the war was among the leaders of thr ghetto resistance. He Survived and published a study of the resistance and mytiny of the Ghetto.
-</li>
-</ul>
-</ul>
 
 
-The S.W.W. started when Germany attacked and occupaied Poland. Then divided it with Russia. Turisk fall into Russian rule. All the activities of the Zionists was forbidden. The Hebrew school and library closed. The movement members were ordered to stop activities.
-Some of them had to join the Russian army. But the "quiet life" did not last long…
-In june 1941 the Nazis invaded Russia. They occupied Turisk on the second day. In the same day the Germans with the active support of the Ukrainians opened the horrible oppressions against the Jews. They were forced to concentrate into half of the houses of Turisk, in terrible sanitary conditions. Many were taken to hard works out of the Shtetl, not all of them came back. In the Ghetto starvation and deads were every day, those who tried to escape were shot down… All the winter clothes were confiscated, all gold and silver robbed, all cows ,goats taken away… Then the terrible Saturday came, all the population was ordered to concentrate in and around the big synagogue, than surrounded by the Ukrainian militia were forced with bayonets to move on the main street towards Kovel. When coming to the pits of the brick factory they were forced to undress and line after line were shot and fell into the pit. The slaughter went on until evening and all were dead!
-In the evening Ukrainian hordes break into the Ghetto houses to sqander… sudden gun Fire was opened from houses, many fall dead much more were wounded, they run away in panick… when the militia started to attack the houses a fire caught the wooden Ghetto houses ,in a few minutes all the Ghetto was aflame. Some young Jews who tried to escape were shot and thrown into the flames. In the morning only a few wooden beams still were smoky. This was the end of the 850 years old Jewish Turisk.
 
-			
-			</p>
 
-		    
-            </div>
-        </article>
-        <!-- Bootstrap core JS-->
-        
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" ></script>
-    
-        
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-    </body>
+
+          <section id="yiddish">
+	    <div class = "pt-5">
+            <h3 class="post-title">The development of Yiddish language and culture In the Shtetl Turisk</h3>
+            <p>
+
+
+
+Yiddish was the most spoken language among the Jews in east Europe  (Poland, Russia, Ukraina)during the last three hundred
+Years.  A widespread  theory- assumption tells that the earliest
+Yiddish writing in Hebrew  letters started in the midst of the 18th century. In those years in Turisk was operating the physicist          Dr. Moshe Marcoosy. He has done a very serious job in changing
+the  attitude of the Jewish population towards  hygienics and medicine. Working as a  physician for many years, among the poor
+population he  acquired    practical knowledge. He investigated the
+than popular diseases and  epidemics. He was very popular among
+the Jewish and general population, and good relations with the 
+Authorities and nobility in the region. After many years they supported him  to enable to publish a medicin hand book written
+In the Yiddish language in Hebrew letters for the use of the poor.
+This was the only medycin book written in Yiddish ever.</p><p>
+The book was published in 1770. According to the a.m. assumption
+and also researchers of Yiddish this book was among the first published Yiddish books in Hebrew letters. Only two or three samples of the book can be found in libraries (Bar ?lan and the
+national library in Jerusalem)
+As of the middle of the 18 th century Yiddish literature is published
+And spread in the eastern regions of Poland ,Russia and Ukraine.</p><p>
+Some interesting facts are telling us that Yiddish printed books were
+Spread and read in Turisk.</p><p>
+From the middle of the 19th century and the beginning of the 20th century groups of young" Yeshive" graduates erected a modern
+Cheider, they stuied , beside religion "tora" also mathematics, Hebrew,and Yiddish. When the first world war ended, they opened 
+In spite of the Hassidim opposition,  a Jewish school, with Hebrew and Yuddish as teaching languages. They choose a committee  to
+Open a library. Books were collected from house to house,mostly
+Yiddish but also Hebrew books.</p>
+                  
+<h4>
+                The split among the school teachers.
+</h4>
+<p>
+
+When the Zionist group decided to Join the "Tarbut" school organization, a group of teachers with the writer-teacher Leib Olizky
+decided  to split and to found a separate school, with Yiddish as the
+teaching language. Leib Olizky donated his late grand fathers house
+to enable the opening of the school. This act divided the Jewish community into two opponent  camps. 
+ The leaders of the Yiddish teaching school aimed their efforts towards the children of the weak part of the Jewish community. Mostly children whose parents could not afford monthly salaries, 
+Therefore they attendet the free of charge Polish school,or studiet in
+The cheider. During the beginning period they managed to convince
+Families of skilled workers and proffesionals, paid only partly
+ Yiddish was their spoken every day language, they loved it, and when the school Joined the "Zisha" school net, it became a success.
+ The school was under the influence of the Socialist Bund Party.</p><p>
+  It was the first Yiddich school among 44 towns and Shtetlach in the
+  Wollyn region. About 150 pupils attendet the school, in spite of the
+   poorness, The school flourished, the studying standards were on
+   a high level. The graduateshad no problem to continue studies or
+   find a job in partime teaching. Tey went to bigger cities to study,
+    very soon they started writing Yiddish poetry or books   (  tales,
+    romances e.t.c.) The shool became the battle field between the
+    Bund party and the underground Communist party. The Polish
+    Authorities could not afford it, and caued many difficulties to the
+    Leading teachers. Leib Olizky left for Varsaw ,he became a very
+     Considered  Yiddish writer. In his absence the situation of the 
+     School worsened ! A change for better occurred!</p><p>
+     The 1st of September 1939! The Soviet army entred Turisk as 
+     part of the German-Russtan pact. Leib Olizky came back to be
+     a teacher in the school. It lasted less than two years.
+     The soviet authorities  shut down the Tarbut"  Zionist  school and
+      The Hebrew library. All the Zionist organizations  were forbidden
+      By law.  The Zionist youth activist were "asked" to join the
+      Communist  Comsomol. Zionists activities  went underground,
+      Some left Turisk to prevent arrests. 
+
+</p><p>
+  From the beginning of the 20ties Yiddish language has a rejuven-
+   -ation. The Yiddish library grew very fast. In those years the best              
+  of the foreign Literature were translated to Yiddish, and enriched
+  the horizon of the fellow-members of the library.</p><p>
+   With the foundation of the Culture-Ligue club the cultural activities
+   gained momentum, a Yiddish amateur drama club was founded( in
+   addition of the existing  Hebrew club) It happened ,when Yiddish
+   club performed a foreign piece translated to Yiddish, the Hebrew 
+   club performed a Yiddish piece in Hebrew(of Sholem Aleichem,
+   Mendely,Perez) a wonderfull competition it was, and a successfull
+   One. The Bund party was very active in organizing  political-litera-
+    ture evenings. Several times a year, the club choose a book for 
+    this purpose, the club members were asked to read it,and prepare
+    for a public trial. Many such public trials ( with a political meaning)
+     took place, in Yiddish by both sides. Each one trying to convince
+    the public. Such was the public trial on the famous Perez  tale :
+    "Bonche Shwaig"  the Bundist prosecution accusing the public of
+     being passive e.t.c. So called cultural evenings took place every 
+     week, reading poetry, musical evenings. The Culture Lige club
+     also invited famous writers and lecturers to trisk to lecture and
+     discussions. It was a big holiday almost a festival, when the poet
+      Zoosie Weinper, who was born in Turisk,on a lecturers trip to 
+      Europe ,arrived for a long visit. Both sides were very proud of
+      Him, the famous Turisk born American writer. The Yiddishists
+      Him being a Yiddish poet. The Zionists because he was an 
+      Active Zionist who even volunteered to join the Hebrew Battalion
+      In Palestine to figth the Turkish Empire. In one of the meetings
+      on the Turia shore he told the audience of his experience during 
+       the war. He also told about his feelings and experience while
+      visiting the Jews in many countries and cities in Europe. With
+       tears he read an allegory song concerning the Jewish fate in
+       Europe." Of a dreaming shepherd with a heavy stick, that was
+       not avare of the nearing danger, although the sheep were 
+       mooing. The end we know. The song had already a melody
+       and he sang it. Almost a prophet.</p><p>
+       Many lecturers and writers came to Turisk,but nobody, beside
+       Zionist were warning of coming. The hopes of the twenties,
+        overturned to a disaster in the end of the thirties . In 1942  the 
+        Jewish people and culture in east Poland,Ukraine  and Russia
+        Were inhiliated, nobody stretched out a hand to help. The
+         Shepherd  with his stick did not awake!      
+	      
+            </p>
+	    </div>
+          </section>
+
+
+
+
+
+
+
+
+
+
+
+          <section id="activists">
+	    <div class = "pt-5">
+            <h2 class="post-title">Community Activists</h2>
+	    </div>
+          </section>
+
+
+
+
+
+          <section id="yizhak_greenshtein">
+	    <div class = "pt-5">
+              <h3 class="post-title">Yizhak  Greenshtein</h3>
+              <h5 class="post-title">
+	      Chairman of Community Comity of Turisk</h5>
+            <p>
+
+	      		<img src="assets/img/greenstain.jpg" class="float-end imgshadow" alt="">
+
+
+Yizhak (Iche) was born in Turisk in 1882 to his parents Idul and Riva-leah. A six children family Yizhak among the youngest. His
+Father Idul  was a man of the world,and a businessman, wandering to South America, Europe, and many other countries.
+When he came back toTurisk, and settled down, it provided him 
+Respect of the Turiscians, Jews and others. Two of his sons left
+For South America, but Yizhak, who was very talented , started 
+a successful  food business, became partner of the big flour mill,
+and other business. He married Ester,and they gave birth to seven children. Yizhak was among the first youngsters who initiated  the erecting of the "Tarbut" school, the Hebrew library,
+and all his children attendet and studiet there. His branchet out
+busines brought him wide influence among the community members, specially among the masses of craftsman, handiwork
+Jewihs people, who were the majority in Turisk. He became the
+most important arbitrator and honest broker to them. This position contributed in the elections as the chairman of the community comity. He was elected three times, He enjoyed
+exelent  relations with polish authorities, for the benefit of the
+community and the people. He was happy, four of his children
+managed to leave for Palestine in time. He shared the fate of all
+the Jews of Turisk in September 1942.       
+
+	      
+            </p>
+	    </div>
+          </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</div>
+      </div>
+    </div>
+  </article><!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> <!-- Core theme JS-->
+   
+  <script src="js/scripts.js"></script>
+</body>
 </html>
