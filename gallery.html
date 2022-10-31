@@ -18,7 +18,27 @@
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
     <div class="container px-4 px-lg-5">
-      <a class="navbar-brand" href="index.html">Home</a> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=
+      <a class="navbar-brand" href="index.html">Home</a>
+      
+      <div class="dropdown">
+        <button class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">Contents</button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+          <li>
+            <a class="dropdown-item" href="#schools">Schools</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#building">Buildings</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#political">Political Movements</a>
+          </li>
+          <li>
+            <a class="dropdown-item" href="#cemetery">Cemetery</a>
+          </li>
+        </ul>
+      </div>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=
       "#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ms-auto py-4 py-lg-0">
@@ -56,30 +76,9 @@
   <div class="row gx-4 gx-lg-5 justify-content-center">
 
 
-<ul class="nav nav-tabs" id="myTab" role="tablist">
-  <li class="nav-item" role="presentation">
-    <button class="nav-link active" id="schools-tab" data-bs-toggle="tab" data-bs-target="#schools" type="button" role="tab" aria-controls="schools" aria-selected="true">Schools</button>
-  </li>
-  <li class="nav-item" role="presentation">
-    <button class="nav-link" id="buildings-tab" data-bs-toggle="tab" data-bs-target="#buildings" type="button" role="tab" aria-controls="buildings" aria-selected="false">Buildings</button>
-  </li>
-  <li class="nav-item" role="presentation">
-    <button class="nav-link" id="political-tab" data-bs-toggle="tab" data-bs-target="#political" type="button" role="tab" aria-controls="political" aria-selected="false">Political Movements</button>
-  </li>
-  <li class="nav-item" role="presentation">
-    <button class="nav-link" id="cemetery-tab" data-bs-toggle="tab" data-bs-target="#cemetery" type="button" role="tab" aria-controls="cemetery" aria-selected="false">The Cemetery</button>
-  </li>
-</ul>
-
-
-
-<div class="tab-content" id="myTabContent">
-  <div class="tab-pane fade show active" id="schools" role="tabpanel" aria-labelledby="schools-tab">
-  <div class = "pt-5">
-    <h2>Schools</h2>
-
-
-
+    <div class = "pt-5">
+      <section id="schools">
+	<h2>Schools</h2>
           <div class="pb-5">
           <img src="assets/img/pic_sch_02.jpg" class="d-block w-100" alt="Slide 1">
 	    <figcaption class="figure-caption text-center">Hebrew kindergarden</figcaption>
@@ -125,15 +124,15 @@
               <img src="assets/img/pic_sch_12.jpg" class="gallery_portrait" alt="Slide 11">
 	      <figcaption class="figure-caption text-center">Purim in gymnastics and culture school</figcaption>
             </div>
+	    </section>
     </div>
-    </div>
-
-
-  <div class="tab-pane fade" id="buildings" role="tabpanel" aria-labelledby="buildings-tab">
+  </div>
 
   
+  <div class="row gx-4 gx-lg-5 justify-content-center">
 
     <div class = "pt-5">
+      <section id="building">
       <h2>Town buildings</h2>
           <div class="pt-5">
             <img src="assets/img/pic_bld_01.jpg" class="gallery_portrait" alt="Slide 1">
@@ -219,18 +218,20 @@
               <img src="assets/img/pic_bld_21.jpg" class="d-block w-100" alt="Slide 21">
 	      <figcaption class="figure-caption text-center">The flour mill</figcaption>
             </div>
-            </div>
             <div class="pt-5">
               <img src="assets/img/pic_bld_22.jpg" class="d-block w-100" alt="Slide 22">
 	      <figcaption class="figure-caption text-center">A well in the suburb</figcaption>
             </div>
+      </section>
     </div>
+  </div>
 
-
-<div class="tab-pane fade" id="political" role="tabpanel" aria-labelledby="political-tab">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
 
     
-  <div class = "pt-5 pb-5">
+      <div class = "pt-5 pb-5">
+	      <section id="political">
+
   <h2>Political Movements</h2>
 
 
@@ -319,7 +320,6 @@
               <img src="assets/img/pic_mov_21.jpg" class="d-block w-100" alt="Slide 21">
 	      <figcaption class="figure-caption text-center">Yarden group of Hashomer Hazair</figcaption>
             </div>
-            </div>
             <div class="pt-5">
               <img src="assets/img/pic_mov_22.jpg" class="d-block w-100" alt="Slide 22">
 	      <figcaption class="figure-caption text-center">The Bund youth movement</figcaption>
@@ -334,16 +334,20 @@
             </div>
   
 	    
-  
-  </div>
+  </section>
+      </div>
+      </div>
+
+
+          <div class="row gx-4 gx-lg-5 justify-content-center">
 
 
 
-
-<div class="tab-pane fade" id="cemetery" role="tabpanel" aria-labelledby="cemetery-tab">
 
     
-  <div class = "pt-5 pb-5">
+	    <div class = "pt-5 pb-5">
+	      	      <section id="cemetery">
+
   <h2>The Cemetery</h2>
 
 
@@ -390,7 +394,7 @@
             </div>
   
 	    
-  
+  </section>
   </div>
 
 
@@ -408,10 +412,6 @@
 
     
 </div>
-
-
-     </div>
-     </div>
 
   <!-- Bootstrap core JS-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> <!-- Core theme JS-->
