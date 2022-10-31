@@ -599,7 +599,7 @@ progress {
 }
 
 .gallery_portrait {
-    height:1000px;
+    max-height: 50em;
     display: block;
     margin-left: auto;
     margin-right: auto;
