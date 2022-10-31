@@ -598,9 +598,11 @@ progress {
   content: "— ";
 }
 
-.img-fluid {
-  max-width: 100%;
-  height: auto;
+.gallery_portrait {
+    height:1000px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .img-thumbnail {
