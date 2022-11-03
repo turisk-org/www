@@ -24,8 +24,13 @@
     }
 
     #viewer {
+<<<<<<< HEAD
       width: 4500px;
       height: 1000px;
+=======
+      width: 290px;
+      height: 580px;
+>>>>>>> parent of 52006f8 (adjust size for deskltop)
       box-shadow: 0 0 4px #ccc;
       padding: 10px 10px 0px 10px;
       margin: 5px auto;
@@ -95,24 +100,24 @@
     document.addEventListener("keyup", function(e){
 
       // Left Key
-      if ((e.keyCode || e.which) == 39) {
+      if ((e.keyCode || e.which) == 37) {
         rendition.prev();
       }
 
       // Right Key
-      if ((e.keyCode || e.which) == 37) {
+      if ((e.keyCode || e.which) == 39) {
         rendition.next();
       }
 
     }, false);
 
-    // document.addEventListener('swiped-left', function(e) {
-    //   rendition.prev();
-    // });
+    document.addEventListener('swiped-left', function(e) {
+      rendition.prev();
+    });
     
-    // document.addEventListener('swiped-right', function(e) {
-    //   rendition.next();
-    // });
+    document.addEventListener('swiped-right', function(e) {
+      rendition.next();
+    });
 
   </script>
 
