@@ -106,14 +106,13 @@
 
     }, false);
 
-     $(window).on( "swiperight", function( event ) {
-       rendition.next();
-     });
+    document.addEventListener('swiped-left', function(e) {
+      rendition.prev();
+    });
     
-     $(window).on( "swipeleft", function( event ) {
-       rendition.prev();
-     });
-
+    document.addEventListener('swiped-right', function(e) {
+      rendition.next();
+    });
 
   </script>
 
