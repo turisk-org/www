@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><package xmlns="http://www.idpf.org/2007/opf" unique-identifier="uid" version="3.0">
+  <metadata xmlns:dc="http://purl.org/dc/elements/1.1/">
+    <dc:identifier id="uid">fbfe7f49-de04-467d-bbf5-84894f46da8c</dc:identifier>
+    <dc:language>en</dc:language>
+    <dc:title>book-p20</dc:title>
+    <meta property="dcterms:modified">2023-08-13T13:17:19Z</meta>
+  </metadata>
+  <manifest>
+    <item href="nav.xhtml" id="toc" media-type="application/xhtml+xml" properties="nav"/>
+    <item href="bookp20.xhtml" id="main" media-type="application/xhtml+xml"/>
+    <item href="images/image2.png" id="image2.png" media-type="image/png"/>
+    <item href="images/image13.png" id="image13.png" media-type="image/png"/>
+    <item href="images/image10.png" id="image10.png" media-type="image/png"/>
+    <item href="images/image14.png" id="image14.png" media-type="image/png"/>
+    <item href="images/image4.png" id="image4.png" media-type="image/png"/>
+    <item href="images/image6.png" id="image6.png" media-type="image/png"/>
+    <item href="images/image8.png" id="image8.png" media-type="image/png"/>
+    <item href="images/image1.png" id="image1.png" media-type="image/png"/>
+    <item href="images/image12.png" id="image12.png" media-type="image/png"/>
+    <item href="images/image5.png" id="image5.png" media-type="image/png"/>
+    <item href="images/image11.png" id="image11.png" media-type="image/png"/>
+    <item href="images/image9.png" id="image9.png" media-type="image/png"/>
+    <item href="images/image3.png" id="image3.png" media-type="image/png"/>
+    <item href="images/image7.png" id="image7.png" media-type="image/png"/>
+    <item href="images/image15.png" id="image15.png" media-type="image/png"/>
+  </manifest>
+  <spine>
+    <itemref idref="main"/>
+  </spine>
+</package>
