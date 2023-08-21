@@ -1,184 +1,103 @@
 <!DOCTYPE html>
-<html class="no-js">
-
+<html lang="en">
 <head>
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content=""> -->
-
-  <link rel="stylesheet" href="css/styles.css">
-  
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <!-- <title></title> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, user-scalable=no">
-  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="author" content="">
+  <title>Turisk</title>
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico"><!-- Font Awesome icons (free version)-->
 
-  <link rel="stylesheet" href="book/epubjs/css/normalize.css">
-  <link rel="stylesheet" href="book/epubjs/css/main.css">
-  <link rel="stylesheet" href="book/epubjs/css/popup.css">
-
-  
-
-  <script src="book/epubjs/js/libs/jquery.min.js"></script>
-
-  <script src="book/epubjs/js/libs/zip.min.js"></script>
-
-  <script>
-    "use strict";
-
-    document.onreadystatechange = function () {
-      if (document.readyState == "complete") {
-        window.reader = ePubReader("https://raw.githubusercontent.com/turisk-org/www/main/book/content/content.opf", {
-          restore: true,
-        })
-      }
-    };
-
-  </script>
-
-  <!-- File Storage -->
-  <script src="book/epubjs/js/libs/localforage.min.js"></script>
-
-  <!-- Full Screen -->
-  <script src="book/epubjs/js/libs/screenfull.min.js"></script>
-
-  <!-- Render -->
-  <script src="book/epubjs/js/epub.js"></script>
-
-  <!-- Reader -->
-  <script src="book/epubjs/js/reader.js"></script>
-
-  <!-- Plugins -->
-  <!-- <script src="js/plugins/search.js"></script> -->
-
-  <!-- Highlights -->
-  <!-- <script src="js/libs/jquery.highlight.js"></script> -->
-  <!-- <script src="js/hooks/extensions/highlight.js"></script> -->
-
+  <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script><!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel=
+  "stylesheet" type="text/css"><!-- Core theme CSS (includes Bootstrap)-->
+  <link href="css/styles.css" rel="stylesheet">
 </head>
-
-<body >
+<body>
   <!-- Navigation-->
-  <div style="height-min: 100vh;">
   <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
     <div class="container px-4 px-lg-5">
-      <a class="navbar-brand" href="index.html">Home</a> <button class="navbar-toggler" type="button"
-        data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
-        aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+      <a class="navbar-brand" href="index.html">Home</a> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=
+      "#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ms-auto py-4 py-lg-0">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle nav-link px-lg-3 py-3 py-lg-4" href="history.html" id="navbarDropdown"
-              role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              History
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="history.html">Introduction</a>
-              <a class="dropdown-item" href="history.html#maps">Maps of Wollyn District</a>
-              <a class="dropdown-item" href="history.html#town-community">Town community</a>
-              <a class="dropdown-item" href="history.html#community-life">Community Life</a>
-              <a class="dropdown-item" href="history.html#hassidic">Hassidic</a>
-              <a class="dropdown-item" href="history.html#yiddish">Yiddish</a>
-            </div>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle nav-link px-lg-3 py-3 py-lg-4" href="history.html" id="navbarDropdown"
-              role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Activists
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="activists.html#yizhak_greenshtein">Yizhak Greenshtein</a>
-              <a class="dropdown-item" href="activists.html#neta_wainer">Neta Wainer</a>
-              <a class="dropdown-item" href="activists.html#avraham_shiye_bar">Avraham Shiye Bar</a>
-              <a class="dropdown-item" href="activists.html#yeshayahu_wainer">Yeshayahu Wainer</a>
-              <a class="dropdown-item" href="activists.html#yaacov_sheaps">Yaacov Sheaps</a>
-              <a class="dropdown-item" href="activists.html#hershel_sthearb">Hershel Sthearb</a>
-              <a class="dropdown-item" href="activists.html#eehezkel_zummerblit">Eehezkel Zummerblit</a>
-              <a class="dropdown-item" href="activists.html#yaacov_shcherb">Yaacov Shcherb</a>
-            </div>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle nav-link px-lg-3 py-3 py-lg-4" href="history.html" id="navbarDropdown"
-              role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Creators
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="creators.html#baruch">Baruch Olizki</a>
-              <a class="dropdown-item" href="creators.html#matys">Matys Olizki</a>
-              <a class="dropdown-item" href="creators.html#leib">Leib Olizky</a>
-              <a class="dropdown-item" href="creators.html#brenner">Liber Brenner</a>
-              <a class="dropdown-item" href="creators.html#markuzi">Moshe Markuzi</a>
-              <a class="dropdown-item" href="creators.html#tabacay">Arie Tabacay</a>
-              <a class="dropdown-item" href="creators.html#tversky">Yohanan Tversky</a>
-              <a class="dropdown-item" href="creators.html#weinper">Zoosie Weinper</a>
-              <a class="dropdown-item" href="creators.html#wall">Yacov Yosef Wall</a>
-              <a class="dropdown-item" href="creators.html#oyvental">Avraham Oivental</a>
-            </div>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle nav-link px-lg-3 py-3 py-lg-4" href="history.html" id="navbarDropdown"
-              role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Testimonies
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="testimonies.html#testimonies"><b>Testimonies of survivers</b></a>
-              <a class="dropdown-item" href="testimonies.html#boymel">Sam Boymel</a>
-              <a class="dropdown-item" href="testimonies.html#binder">Yitzhak Binder</a>
-              <a class="dropdown-item" href="testimonies.html#ukranian-testimonies"><b>Testimonies of Ukrainians</b></a>
-              <a class="dropdown-item" href="testimonies.html#patiychuk">Olexander Fedorovich Patiychuk</a>
-              <a class="dropdown-item" href="testimonies.html#list">A list of names of Jews-citizens of the Shtetl
-                Turisk</a>
-            </div>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle nav-link px-lg-3 py-3 py-lg-4" href="history.html" id="navbarDropdown"
-              role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Photos
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="gallery.html#schools">Schools</a>
-              <a class="dropdown-item" href="gallery.html#building">Buildings</a>
-              <a class="dropdown-item" href="gallery.html#political">Political Movements</a>
-              <a class="dropdown-item" href="gallery.html#cemetery">Cemetery</a>
-            </div>
-          </li>
-
-
           <li class="nav-item">
-            <a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Contact</a>
+            <a class="nav-link px-lg-3 py-3 py-lg-4" href="history.html">History</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link px-lg-3 py-3 py-lg-4" href="contact_he.html">עברית</a>
+            <a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Testimonies</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-lg-3 py-3 py-lg-4" href="gallery.html">Photos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-lg-3 py-3 py-lg-4" href="book.html">Book</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Contact</a>
           </li>
         </ul>
       </div>
     </div>
   </nav><!-- Page Header-->
-  <header class="masthead" style="background-image: url('assets/img/home-bg.jpg');height: 0.01%">
+  <header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
     <div class="container position-relative px-4 px-lg-5">
       <div class="row gx-4 gx-lg-5 justify-content-center">
         <div class="col-md-10 col-lg-8 col-xl-7">
           <div class="site-heading">
-            <h1>Book</h1>
+            <h1>פנקס הקהילה</h1>
           </div>
         </div>
       </div>
     </div>
-  </header>
+  </header><!-- Main Content-->
   
-  <div style="min-height: 1000vh;min-width: 100%">
-      <iframe style="min-height: 100%;" width="100%" height="100%" src="book/epubjs/index.html" ></iframe>
+  
+  <div class="container px-4 px-lg-5">
+  
+  <div class="row gx-4 gx-lg-5 justify-content-center">
+  
+  
+  <div class = "pt-5 pb-5">
+  
+      <div id="schoolsCarousel" class="carousel slide" data-bs-ride="carousel" >
+        <!-- Carousel indicators -->
+        <ol class="carousel-indicators">
+            <li data-bs-target="#schoolsCarousel" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#schoolsCarousel" data-bs-slide-to="1"></li>
+            <li data-bs-target="#schoolsCarousel" data-bs-slide-to="2"></li>
+        </ol>
+        
+        <!-- Wrapper for carousel items -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="assets/img/book1.jpg" class="d-block w-100" alt="Slide 1">                
+            </div>
+            <div class="carousel-item">
+                <img src="assets/img/book2.jpg" class="d-block w-100" alt="Slide 1">                
+            </div>
+            <div class="carousel-item">
+                <img src="assets/img/book3.jpg" class="d-block w-100" alt="Slide 1">                
+            </div>
+        </div>
+
+        <!-- Carousel controls -->
+        <a class="carousel-control-prev" href="#schoolsCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </a>
+        <a class="carousel-control-next" href="#schoolsCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </a>
     </div>
-  </div>
-
-
-  <!-- <embed src="/home/cartyass/projects/turisk-web/www/book/epubjs/index.html" width="100%" height="100%"/> -->
-
-<!-- </div> -->
+    </div>
+    
+     </div>
+  
+  
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> <!-- Core theme JS-->
+   
+  <script src="js/scripts.js"></script>
 </body>
-
 </html>
