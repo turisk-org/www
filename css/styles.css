@@ -11248,3 +11248,30 @@ header.masthead .site-heading .h1 {
     font-size: 2.25rem;
   }
 }
+
+
+
+
+
+.previous_book_page {
+  background-color: #f1f1f1;
+  color: black;
+}
+
+.next_book_page {
+  background-color: #04AA6D;
+  color: white;
+}
+
+.round {
+  border-radius: 50%;
+}
+
+
+.float-parent-element { 
+    width: 200%; 
+} 
+.float-child-element { 
+    float: left; 
+    width: 50%; 
+} 
