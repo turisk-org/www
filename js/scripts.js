@@ -3,7 +3,11 @@
 * Copyright 2013-2022 Start Bootstrap
 * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-clean-blog/blob/master/LICENSE)
 */
-fetch('nav_bar.html')
+
+const scriptElement = document.currentScript; // Get the current script element
+const nav_bar_file = scriptElement.dataset.nav_bar_file;
+
+fetch(nav_bar_file)
     .then(response => response.text())
     .then(data => {
         document.getElementById('menu-container').innerHTML = data;
