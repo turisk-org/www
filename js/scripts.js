@@ -3,6 +3,12 @@
 * Copyright 2013-2022 Start Bootstrap
 * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-clean-blog/blob/master/LICENSE)
 */
+fetch('nav_bar.html')
+    .then(response => response.text())
+    .then(data => {
+        document.getElementById('menu-container').innerHTML = data;
+    });
+
 window.addEventListener('DOMContentLoaded', () => {
     let scrollPos = 0;
     const mainNav = document.getElementById('mainNav');
@@ -27,3 +33,7 @@ window.addEventListener('DOMContentLoaded', () => {
         scrollPos = currentTop;
     });
 })
+
+
+
+
