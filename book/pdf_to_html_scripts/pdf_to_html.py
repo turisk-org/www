@@ -147,9 +147,6 @@ html_header = '''
           <section id="book_page_">
 	    <div class = "pt-5">
           <img src="assets/book_images/turisk_book_front_cover.jpg" class="w-100" alt="">
-
-
-
 '''
 
 html_footer = '''
@@ -167,6 +164,15 @@ html_footer = '''
 </body>
 </html>
 '''
+
+table_of_contents_page = '''
+<section id="table_of_contents">
+
+
+
+</section>
+'''
+
 
 def reverse_numbers_in_string(input_string):
     def reverse_number(match):
@@ -414,7 +420,6 @@ class Page:
         if next_image_id >= 0:
             text_lines.append(get_image_html_tag(self.number, next_image_id + 1))
 
-
         return '\n'.join(text_lines)
 
 
@@ -443,10 +448,11 @@ class Book:
         output = []
         for number in page_numbers:
             print('Generating page %d ' % number)
-            content = self.pages[number].get_html_content()
+            content = '<section id="page_%d">' % number
+            content += self.pages[number].get_html_content()
             # if not content.strip():
             #     continue
-            content += '<div class="page_number">― %d ―</div>' % number
+            content += '<div class="page_number"><a href="#">― %d ―</a></div></section>' % number
             output.append(content)
 
 
@@ -505,7 +511,7 @@ def pdf_to_book(doc, max_pages, only_specific_page=-1):
 
 fname = '/home/benami/Documents/turisk_book_test/book.pdf' # sys.argv[1]  # filename
 output_filename = 'book.html'
-max_pages = 567
+max_pages = 567 # 567
 only_specific_page = -1  # Set to -1 to disable.
 book = pdf_to_book(pymupdf.open(fname), max_pages, only_specific_page)
 book.verify_page_numbers()
