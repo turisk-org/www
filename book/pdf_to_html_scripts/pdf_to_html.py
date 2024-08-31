@@ -123,7 +123,17 @@ def char_height(char):
 def line_height(line):
     if not line:
         return None
-    return char_height(line[0])
+    return min(char_height(line[0]), char_height(line[-1]))
+
+def line_length(line):
+    if not line:
+        return None
+    return abs(char_x(line[0]) - char_x(line[-1]))
+
+def line_y(line):
+    if not line:
+        return None
+    return min(char_y(line[0]), char_y(line[-1]))
 
 def is_footnote_marker(char, line):
     if  line_height(line) > 10 and char_height(char)  < 10:
@@ -140,18 +150,27 @@ def is_page_number_line(line):
         return True
     return False
 
-def is_header(line):
+def get_header_number(line):
     # print(line_height(line), int(line_height(line)))
-    return int(line_height(line)) > 20
+    if line_height(line) > 19:
+        return 3
+    if line_height(line) > 15:
+        return 4
+    return None
 
 def is_special_header_move_to_page_top(line):
-    return int(line_height(line)*100) == 1585
+    return False
+    # return int(line_height(line)*100) == 1585
 
 def get_image_file_path(page_number, image_number):
     return 'assets/book_images/page_%d_image_%d.jpg' % (page_number, image_number)
 
 def get_image_html_tag(page_number, image_number):
     return '<img src="%s" class="w-100" alt="">' % get_image_file_path(page_number, image_number)
+
+pages_without_passages = {302}
+def is_page_with_passage_disabled(page_number):
+    return page_number in pages_without_passages
 
 line_heights = dict()
 
@@ -163,6 +182,33 @@ class Page:
         self.image_locations = []
 
     def update_image_locations(self, pdf_page):
+        # Manual override for pages with images with the same name...
+        if self.number == 302:
+            self.image_locations.append(0)
+            self.image_locations.append(400)
+            self.image_locations.append(600)
+            return
+        if self.number == 303:
+            images = pdf_page.get_images()
+            print(len(images))
+            self.image_locations.append(0)
+            self.image_locations.append(0)
+            self.image_locations.append(0)
+            self.image_locations.append(0)
+            return
+        if self.number == 324 or self.number == 325 or self.number == 456 or self.number == 457:
+            images = pdf_page.get_images()
+            print(len(images))
+            self.image_locations.append(0)
+            self.image_locations.append(0)
+            return
+        if self.number == 455:
+            self.image_locations.append(0)
+            self.image_locations.append(400)
+            self.image_locations.append(600)
+            return
+
+        # Here is the common case.
         images = pdf_page.get_images()
         for image in images:
             # b = page.get_image_bbox()
@@ -192,11 +238,13 @@ class Page:
             if self.number == p:
                 next_image_id = -1
         print('Number of images: %d' % len(self.image_locations))
+
+        self.lines.sort(key=lambda x: line_y(x))
+        is_in_passage = False
         for line in self.lines:
             h = line_height(line)
             if not h in line_heights.keys():
                 line_heights[h] = line
-
 
             if is_footnote_line(line):
                 continue # Skip for now.
@@ -206,8 +254,6 @@ class Page:
 
             text = ''
 
-            # Add line height for debug.
-            # text += '[Line height: %f] ' % line_height(line)
 
             for c in line:
                 # For now skip comments.
@@ -229,18 +275,42 @@ class Page:
                     next_image_id = -1
 
 
-            if is_header(line):
-                corrected = '<h3 class="post-title">%s</h3>' % corrected
+            # Add line height for debug.
+            print('[height: %f, Y:%f, length: %f, header:%s, force_top:%s] %s' % (line_height(line), line_y(line) , line_length(line), get_header_number(line), is_special_header_move_to_page_top(line), text))
+
+            header_index = get_header_number(line)
+            header_line = False
+            if header_index:
+                corrected = '<h%d class="post-title">%s</h%d>' % (header_index, corrected, header_index)
+                header_line = True
+
             elif is_special_header_move_to_page_top(line):
                 corrected = ' <h4 class="post-title">%s</h4>' % corrected
+                header_line = True
+
+            if header_line:
+                if is_in_passage:
+                    corrected = '</p>%s' % corrected
+                    is_in_passage = False
             else:
-                corrected = '%s' % corrected
+                if not is_page_with_passage_disabled(self.number):
+                    if is_in_passage:
+                        if line_length(line) < 350:
+                            corrected = '%s</p>' % corrected
+                            is_in_passage = False
+                    else:
+                        # print('adding passage', is_in_passage)
+                        corrected = '<p>%s' % corrected
+                        is_in_passage = True
 
             if is_special_header_move_to_page_top(line):
                 text_lines.insert(0, corrected)
             else:
                 text_lines.append(corrected)
 
+        if is_in_passage:
+            text_lines.append('</p>')
+        # If there is not text but there is an image we need to add it.
         if next_image_id >= 0:
             text_lines.append(get_image_html_tag(self.number, next_image_id + 1))
 
@@ -289,17 +359,18 @@ def pdf_to_book(doc, max_pages, only_specific_page=-1):
     book = Book()
     i = 0
     for page in doc:  # scan through the pages
+        print('----- Processing Page: %d' % i)
         i += 1
         if only_specific_page >= 0 and only_specific_page != i:
             continue
         if only_specific_page < 0 and i > max_pages:
             break
 
-        images = page.get_images()
-        for image in images:
-            # b = page.get_image_bbox()
-            bbox = page.get_image_bbox(image[7])
-            #print(bbox.y1)
+        # images = page.get_images()
+        # for image in images:
+        #     # b = page.get_image_bbox()
+        #     bbox = page.get_image_bbox(image[7])
+        #     #print(bbox.y1)
 
         new_page = Page(i)
         new_page.update_image_locations(page)
@@ -334,11 +405,11 @@ def pdf_to_book(doc, max_pages, only_specific_page=-1):
 
 fname = '/home/benami/Documents/turisk_book_test/book.pdf' # sys.argv[1]  # filename
 output_filename = 'book.html'
-max_pages = 30
+max_pages = 567
 only_specific_page = -1  # Set to -1 to disable.
 book = pdf_to_book(pymupdf.open(fname), max_pages, only_specific_page)
 book.verify_page_numbers()
-book.print_pages()
+# book.print_pages()
 book.generate_html(output_filename)
 
 
