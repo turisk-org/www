@@ -11218,6 +11218,15 @@ header.masthead .site-heading .h1 {
   text-align: center;
 }
 
+.page_number {
+  font-size: 0.875rem;
+  font-style: italic;
+  display: block;
+  margin: 0;
+  padding: 0.625rem;
+  text-align: center;
+}
+
 .post-preview > a {
   color: #212529;
 }

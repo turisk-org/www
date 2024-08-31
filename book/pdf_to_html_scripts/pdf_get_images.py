@@ -107,11 +107,14 @@ def recoverpix(doc, item):
         }
     return doc.extract_image(xref)
 
-if len(sys.argv) < 2:
-    print('Usage: %s <pdf file name>')
-    sys.exit(-1)
+# if len(sys.argv) < 2:
+#     print('Usage: %s <pdf file name>')
+#     sys.exit(-1)
 
-fname = sys.argv[1] if len(sys.argv) == 2 else None
+
+fname = '/home/benami/Documents/turisk_book_test/book.pdf' # sys.argv[1]  # filename
+#
+# fname = sys.argv[1] if len(sys.argv) == 2 else None
 #if not fname:
 #    fname = sg.PopupGetFile("Select file:", title="PyMuPDF PDF Image Extraction")
 if not fname:
@@ -125,6 +128,10 @@ page_count = doc.page_count  # number of pages
 xreflist = []
 imglist = []
 for pno in range(page_count):
+    if pno <= 300:
+        continue
+    # if pno > 20:
+    #     break
     # sg.one_line_progress_meter(
     #     "Extract Images",  # show our progress
     #     pno + 1,
@@ -135,8 +142,22 @@ for pno in range(page_count):
     print('--------page %d' % pno)
     il = doc.get_page_images(pno)
     imglist.extend([x[0] for x in il])
-    i = 0
+
+    page_images = []
     for img in il:
+        try:
+            bbox = doc[pno].get_image_bbox(img[7])
+            page_images.append((bbox.y1, img))
+        except:
+            print('Could not find the right order of images in page: %d' % pno)
+            page_images.append((0, img))
+
+    page_images.sort(key=lambda x: x[0])
+
+    sorted_images = [t[1] for t in page_images]
+
+    i = 0
+    for img in sorted_images:
         i += 1
         xref = img[0]
         if xref in xreflist:
