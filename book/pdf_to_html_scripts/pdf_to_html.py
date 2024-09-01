@@ -112,8 +112,14 @@ html_header = '''
 	   </li>
 
 	   
-          <li class="nav-item">
-            <a class="nav-link px-lg-3 py-3 py-lg-4" href="book.html">פנקס הקהילה</a>
+          <li class="nav-item dropdown">
+             <a class="nav-link dropdown-toggle nav-link px-lg-3 py-3 py-lg-4" href="history.html" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               פנקס הקהילה
+             </a>
+             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+               <a class="dropdown-item" href="book.html">ספר</a>
+               <a class="dropdown-item" href="book_index.html">תוכן ענינים</a>
+	     </div>
           </li>
 
            <li class="nav-item">
@@ -146,11 +152,12 @@ html_header = '''
         <div class="col-md-10 col-lg-8 col-xl-7">
           <section id="book_page_">
 	    <div class = "pt-5">
-          <img src="assets/book_images/turisk_book_front_cover.jpg" class="w-100" alt="">
 '''
 
-html_footer = '''
-          <img src="assets/book_images/turisk_book_back_cover.jpg" class="w-100" alt="">
+html_book_front_cover = '<img src="assets/book_images/turisk_book_front_cover.jpg" class="w-100" alt="">'
+html_book_back_cover = '<img src="assets/book_images/turisk_book_back_cover.jpg" class="w-100" alt="">'
+
+html_footer = '''          
 	    </div>
           </section>
 	</div>
@@ -160,7 +167,12 @@ html_footer = '''
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script> 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> <!-- Core theme JS-->
    
-  <script src="js/scripts.js" data-nav_bar_file="nav_bar_he.html"></script>
+  <script src="js/scripts.js"></script>
+  
+
+	  <a class="menuBtn" href="book_index.html"><img src="assets/book_images/content.png" alt="תוכן ענינים" style="width: 30px; height: 30px;"></a>
+	  <a class="upBtn" href="book.html"><img src="assets/book_images/back_to_top.png" alt="לתחילת הספר" style="width: 30px; height: 30px;"></a>
+  
 </body>
 </html>
 '''
@@ -277,6 +289,15 @@ def get_image_html_tag(page_number, image_number):
 pages_without_passages = {302}
 def is_page_with_passage_disabled(page_number):
     return page_number in pages_without_passages
+
+def get_number_from_end_of_line(line):
+    output = ''
+    for i in range(len(line)-1, 0, -1):
+        if line[i].isnumeric():
+            output+=line[i]
+        else:
+            break
+    return output
 
 line_heights = dict()
 
@@ -422,6 +443,66 @@ class Page:
 
         return '\n'.join(text_lines)
 
+    def get_index_content(self):
+        self.lines.sort(key=lambda x: line_y(x))
+        rows = []
+        for line in self.lines:
+            h = line_height(line)
+            if not h in line_heights.keys():
+                line_heights[h] = line
+
+            if is_footnote_line(line):
+                continue # Skip for now.
+
+            if is_page_number_line(line):
+                continue
+
+            text = ''
+
+            for c in line:
+                # For now skip comments.
+                if is_footnote_marker(c, line):
+                    pass # For now lets skip it.
+                else:
+                    text += c['c']
+
+            corrected = move_dot_and_comma_to_end(add_footnote_markers(reverse_numbers_in_string(text)))
+
+            page_number = get_number_from_end_of_line(corrected)[::-1]
+            text = corrected.replace(page_number, '').strip()
+
+            # Add line height for debug.
+            print('[height: %f, Y:%f, length: %f, header:%s, force_top:%s] %s' % (line_height(line), line_y(line) , line_length(line), get_header_number(line), is_special_header_move_to_page_top(line), text))
+            print(page_number)
+            print(text)
+            rows.append((text, page_number))
+
+        # Generate a table from the index rows.
+        table_header = '<table class="table" id="toc">'
+        row_template = '''<tr>
+<th>%s</th>
+<th>%s</th>
+</tr>
+'''
+
+        table_footer = '</table>'
+
+        html_output = [table_header]
+        for row in rows:
+            page_number = row[1]
+            text = row[0]
+            if not page_number:
+                text = '<h3>%s</h3>' % text
+            else:
+                text = '<a href="book.html#page_%s">%s</a>' % (page_number, text)
+
+            if not text.strip():
+                continue
+            html_output.append(row_template % (text, page_number))
+        html_output.append(table_footer)
+
+        return '\n'.join(html_output)
+
 
 class Book:
     def __init__(self):
@@ -447,26 +528,53 @@ class Book:
         page_numbers = sorted(self.pages.keys())
         output = []
         for number in page_numbers:
+            # Generate HTML until and not including the index because we have it as a separate file.
+            if number > 576:
+                break
             print('Generating page %d ' % number)
             content = '<section id="page_%d">' % number
             content += self.pages[number].get_html_content()
             # if not content.strip():
             #     continue
-            content += '<div class="page_number"><a href="#">― %d ―</a></div></section>' % number
+            content += '<div class="page_number">%d</div></section><hr class="my-4">' % number
             output.append(content)
 
-
-        html_content = html_header + '\n'.join(output) + html_footer
+        html_content = (html_header +
+                        html_book_front_cover +
+                        '\n'.join(output) +
+                        html_book_back_cover +
+                        html_footer)
         print('Generating:', filename)
         with open(filename, 'w', encoding='utf-8') as file:
             file.write(html_content)
 
-def pdf_to_book(doc, max_pages, only_specific_page=-1):
+    def generate_index_file(self, filename):
+        output = []
+        for number in range(569, 575):
+            print('Analyzing page %d ' % number)
+            content = '<section id="book_index">'
+            content += self.pages[number].get_index_content()
+            content += '</section>'
+            output.append(content)
+
+        html_content = (html_header +
+                        '\n'.join(output) +
+                        html_footer)
+        print('Generating:', filename)
+        with open(filename, 'w', encoding='utf-8') as file:
+            file.write(html_content)
+
+
+
+def pdf_to_book(doc, max_pages, only_specific_page=-1, only_index_page=False):
     book = Book()
     i = 0
     for page in doc:  # scan through the pages
         print('----- Processing Page: %d' % i)
         i += 1
+        if only_index_page and i < 569 or i > 574:
+            continue
+
         if only_specific_page >= 0 and only_specific_page != i:
             continue
         if only_specific_page < 0 and i > max_pages:
@@ -511,12 +619,15 @@ def pdf_to_book(doc, max_pages, only_specific_page=-1):
 
 fname = '/home/benami/Documents/turisk_book_test/book.pdf' # sys.argv[1]  # filename
 output_filename = 'book.html'
-max_pages = 567 # 567
+output_index_filename = 'book_index.html'
+max_pages = 1000 # 567 is the last page for which we generate the html file.
 only_specific_page = -1  # Set to -1 to disable.
-book = pdf_to_book(pymupdf.open(fname), max_pages, only_specific_page)
+only_index_page = False
+book = pdf_to_book(pymupdf.open(fname), max_pages, only_specific_page, only_index_page)
 book.verify_page_numbers()
 # book.print_pages()
 book.generate_html(output_filename)
+# book.generate_index_file(output_index_filename)
 
 
 # print('Number of sizes:', len(line_heights))
