@@ -11287,77 +11287,28 @@ header.masthead .site-heading .h1 {
 } 
 
 
-.scrollToTopBtn {
-  background-color: white;
-  border: none;
-  color: dark gray;
-  cursor: pointer;
-  font-size: 18px;
-  line-height: 48px;
-  width: 48px;
-
-  /* place it at the bottom right corner */
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  /* keep it at the top of everything else */
-  z-index: 100;
-  /* hide with opacity */
-  opacity: 0;
-  /* also add a translate effect */
-  transform: translateY(100px);
-  /* and a transition */
-  transition: all 0.5s ease;
-  opacity: 1;
-  transform: translateY(0);
-}
-
 .menuBtn {
   background-color: white;
   border: none;
   color: dark gray;
-  cursor: pointer;
-  font-size: 18px;
-  line-height: 48px;
-  width: 48px;
 
   /* place it at the bottom right corner */
   position: fixed;
-  bottom: 10px;
-  right: 10px;
+  bottom: 5px;
+  right: 0px;
   /* keep it at the top of everything else */
   z-index: 100;
-  /* hide with opacity */
-  opacity: 0;
-  /* also add a translate effect */
-  transform: translateY(100px);
-  /* and a transition */
-  transition: all 0.5s ease;
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .upBtn {
   background-color: white;
   border: none;
   color: dark gray;
-  cursor: pointer;
-  font-size: 18px;
-  line-height: 48px;
-  width: 48px;
 
   /* place it at the bottom right corner */
   position: fixed;
-  bottom: 10px;
-  right: 50px;
+  bottom: 5px;
+  right: 35px;
   /* keep it at the top of everything else */
   z-index: 100;
-  /* hide with opacity */
-  opacity: 0;
-  /* also add a translate effect */
-  transform: translateY(100px);
-  /* and a transition */
-  transition: all 0.5s ease;
-  opacity: 1;
-  transform: translateY(0);
 }

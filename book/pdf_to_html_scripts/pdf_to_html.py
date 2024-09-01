@@ -168,11 +168,7 @@ html_footer = '''
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script> <!-- Core theme JS-->
    
   <script src="js/scripts.js"></script>
-  
-
-	  <a class="menuBtn" href="book_index.html"><img src="assets/book_images/content.png" alt="תוכן ענינים" style="width: 30px; height: 30px;"></a>
-	  <a class="upBtn" href="book.html"><img src="assets/book_images/back_to_top.png" alt="לתחילת הספר" style="width: 30px; height: 30px;"></a>
-  
+    
 </body>
 </html>
 '''
