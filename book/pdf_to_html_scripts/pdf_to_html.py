@@ -211,13 +211,14 @@ def add_footnote_markers(line):
 
 
 def move_dot_and_comma_to_end(line):
-    line = line.strip()
-    if not line:
-        return ''
-    if line[-1] in ('.', ',', '?', ';', '!', '-'):
-        end = line[-1]
-        return end + line[:-1]
     return line
+    # line = line.strip()
+    # if not line:
+    #     return ''
+    # if line[-1] in ('.', ',', '?', ';', '!', '-'):
+    #     end = line[-1]
+    #     return end + line[:-1]
+    # return line
 
 def char_x(char):
     bbox = char['bbox']
@@ -237,7 +238,16 @@ def char_height(char):
 def line_height(line):
     if not line:
         return None
-    return min(char_height(line[0]), char_height(line[-1]))
+    sizes = []
+    for char in line:
+        sizes.append(char_height(char))
+
+    sizes.sort()
+    middle = int(len(sizes) / 2)
+    if middle > len(sizes):
+        middle = 0
+
+    return sizes[middle]
 
 def line_length(line):
     if not line:
@@ -250,9 +260,9 @@ def line_y(line):
     return min(char_y(line[0]), char_y(line[-1]))
 
 def is_footnote_marker(char, line):
-    if  line_height(line) > 10 and char_height(char)  < 10:
+   if char_height(char) < 10:
         return True
-    return False
+   return False
 
 def is_footnote_line(line):
     if  line_height(line) < 12 and line_height(line) > 10:
@@ -402,9 +412,15 @@ class Page:
             print('[height: %f, Y:%f, length: %f, header:%s, force_top:%s] %s' % (line_height(line), line_y(line) , line_length(line), get_header_number(line), is_special_header_move_to_page_top(line), text))
 
             header_index = get_header_number(line)
+
             header_line = False
             if header_index:
-                corrected = '<h%d class="post-title">%s</h%d>' % (header_index, corrected, header_index)
+                # Special case:
+                if self.number == 9 and header_index == 4:
+                    header_index = None
+                    corrected = '<br>%s' % corrected
+                else:
+                    corrected = '<h%d class="post-title">%s</h%d>' % (header_index, corrected, header_index)
                 header_line = True
 
             elif is_special_header_move_to_page_top(line):
@@ -616,7 +632,7 @@ def pdf_to_book(doc, max_pages, only_specific_page=-1, only_index_page=False):
 fname = '/home/benami/Documents/turisk_book_test/book.pdf' # sys.argv[1]  # filename
 output_filename = 'book.html'
 output_index_filename = 'book_index.html'
-max_pages = 1000 # 567 is the last page for which we generate the html file.
+max_pages = 567 # 567 is the last page for which we generate the html file.
 only_specific_page = -1  # Set to -1 to disable.
 only_index_page = False
 book = pdf_to_book(pymupdf.open(fname), max_pages, only_specific_page, only_index_page)
