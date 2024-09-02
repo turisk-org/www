@@ -374,7 +374,8 @@ class Page:
 
         self.lines.sort(key=lambda x: line_y(x))
         is_in_passage = False
-        for line in self.lines:
+
+        for line_index, line in enumerate(self.lines):
             h = line_height(line)
             if not h in line_heights.keys():
                 line_heights[h] = line
@@ -409,16 +410,19 @@ class Page:
 
 
             # Add line height for debug.
-            print('[height: %f, Y:%f, length: %f, header:%s, force_top:%s] %s' % (line_height(line), line_y(line) , line_length(line), get_header_number(line), is_special_header_move_to_page_top(line), text))
+            print('[%d][height: %f, Y:%f, length: %f, header:%s, force_top:%s] %s' % (line_index, line_height(line), line_y(line) , line_length(line), get_header_number(line), is_special_header_move_to_page_top(line), text))
 
             header_index = get_header_number(line)
 
             header_line = False
             if header_index:
+                print(line)
+                print(line_index)
+                print(len(self.lines) )
                 # Special case:
-                if self.number == 9 and header_index == 4:
+                if line_index > len(self.lines) - 5 and len(self.lines) > 10:
                     header_index = None
-                    corrected = '<br>%s' % corrected
+                    corrected = '<big>%s</big>' % corrected
                 else:
                     corrected = '<h%d class="post-title">%s</h%d>' % (header_index, corrected, header_index)
                 header_line = True
