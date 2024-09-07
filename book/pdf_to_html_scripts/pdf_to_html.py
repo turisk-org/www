@@ -620,12 +620,30 @@ def pdf_to_book(doc, max_pages, only_specific_page=-1, only_index_page=False):
                         for l in all_lines:
                             if abs(char_y(char) - char_y(l[0])) < 2:
                                 l.append(char)
+
                                 found = True
                         if not found:
                             all_lines.append([char])
 
+
         for line in all_lines:
             line.sort(key=lambda x: -char_x(x))
+
+            sections = []
+            for char in line:
+                if char['c'] != ' ':
+                    sections.append((char['bbox'][0],char['bbox'][2]))
+
+            for j in range(len(line)):
+                if j >= len(line):
+                    break
+                char = line[j]
+                if char['c'] == ' ':
+                    center = (char['bbox'][0] + char['bbox'][2]) / 2
+                    for section in sections:
+                        if section[0] < center and section[1] > center or section[0] > center and section[1] < center:
+                            line.pop(j)
+                            break
 
         new_page.lines = all_lines
     return book
