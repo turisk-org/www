@@ -629,10 +629,11 @@ def pdf_to_book(doc, max_pages, only_specific_page=-1, only_index_page=False):
         for line in all_lines:
             line.sort(key=lambda x: -char_x(x))
 
+            # Remove extra spaces which were added due to nikud.
             sections = []
             for char in line:
                 if char['c'] != ' ':
-                    sections.append((char['bbox'][0],char['bbox'][2]))
+                    sections.append((char['bbox'][0],char['bbox'][2], char['c']))
 
             for j in range(len(line)):
                 if j >= len(line):
@@ -641,7 +642,7 @@ def pdf_to_book(doc, max_pages, only_specific_page=-1, only_index_page=False):
                 if char['c'] == ' ':
                     center = (char['bbox'][0] + char['bbox'][2]) / 2
                     for section in sections:
-                        if section[0] < center and section[1] > center or section[0] > center and section[1] < center:
+                        if abs(char['bbox'][0] - char['bbox'][2]) < 4 and (section[0] < center and section[1] > center or section[0] > center and section[1] < center):
                             line.pop(j)
                             break
 
