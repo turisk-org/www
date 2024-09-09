@@ -628,6 +628,13 @@ def pdf_to_book(doc, max_pages, only_specific_page=-1, only_index_page=False):
 
         for line in all_lines:
             line.sort(key=lambda x: -char_x(x))
+            # Count the number of spaces in the line.
+            # If there are less than 3 we don't want to remove any spaces.
+            # Also, if there is a sequence of letters without a space of ~20, we need to add a space.
+            number_of_spaces = 0
+            for char in line:
+                if char['c'] == ' ':
+                    number_of_spaces += 1
 
             # Remove extra spaces which were added due to nikud.
             sections = []
@@ -635,6 +642,8 @@ def pdf_to_book(doc, max_pages, only_specific_page=-1, only_index_page=False):
                 if char['c'] != ' ':
                     sections.append((char['bbox'][0],char['bbox'][2], char['c']))
 
+            # Count the number of spaces that will be removed.
+            count_removed = 0
             for j in range(len(line)):
                 if j >= len(line):
                     break
@@ -642,9 +651,35 @@ def pdf_to_book(doc, max_pages, only_specific_page=-1, only_index_page=False):
                 if char['c'] == ' ':
                     center = (char['bbox'][0] + char['bbox'][2]) / 2
                     for section in sections:
-                        if abs(char['bbox'][0] - char['bbox'][2]) < 4 and (section[0] < center and section[1] > center or section[0] > center and section[1] < center):
-                            line.pop(j)
+                        if (number_of_spaces > 3 and abs(char['bbox'][0] - char['bbox'][2]) < 4 and
+                                (section[0] < center and section[1] > center or
+                                 section[0] > center and section[1] < center)):
+                            count_removed += 1
                             break
+            if count_removed < 10:
+                for j in range(len(line)):
+                    if j >= len(line):
+                        break
+                    char = line[j]
+                    if char['c'] == ' ':
+                        center = (char['bbox'][0] + char['bbox'][2]) / 2
+                        for section in sections:
+                            if (number_of_spaces > 3 and abs(char['bbox'][0] - char['bbox'][2]) < 4 and
+                                    (section[0] < center and section[1] > center or
+                                     section[0] > center and section[1] < center)):
+                                line.pop(j)
+                                break
+
+            # Make sure that there are no long sequences without a space.
+            count_sequence = 0
+            for char in line:
+                if char['c'] == ' ':
+                    count_sequence = 0
+                else:
+                    count_sequence += 1
+                if count_sequence > 20 and char['c'] == '-':
+                    char['c'] = '- '
+                    count_sequence = 0
 
         new_page.lines = all_lines
     return book
